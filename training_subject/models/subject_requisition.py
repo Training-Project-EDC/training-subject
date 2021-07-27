@@ -20,7 +20,7 @@ from edc_visit_tracking.model_mixins import PreviousVisitModelMixin
 
 from edc_visit_schedule.model_mixins import SubjectScheduleCrfModelMixin
 
-from ..choices import REASON_NOT_DRAWN, ITEM_TYPE
+
 from .subject_visit import SubjectVisit
 from .model_mixins import SearchSlugModelMixin
 from edc_base.model_fields.custom_fields import OtherCharField
@@ -68,7 +68,6 @@ class SubjectRequisition(
     item_type = models.CharField(
         verbose_name='Item collection type',
         max_length=25,
-        choices=ITEM_TYPE,
         default=NOT_APPLICABLE)
 
     item_type_other = OtherCharField()
@@ -82,8 +81,7 @@ class SubjectRequisition(
     reason_not_drawn = models.CharField(
         verbose_name='If not drawn, please explain',
         max_length=25,
-        default=NOT_APPLICABLE,
-        choices=REASON_NOT_DRAWN)
+        default=NOT_APPLICABLE,)
 
     drawn_datetime = models.DateTimeField(
         verbose_name='Date / Time Specimen Drawn',

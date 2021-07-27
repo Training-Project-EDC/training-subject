@@ -1,4 +1,4 @@
-from .appointment_admin import Appointment
+from .appointment_admin import AppointmentAdmin
 from .community_questionnaire_admin import CommunityQuestionnaireAdmin
 from .education_questionnaire_admin import EducationQuestionnaireAdmin
 from .informed_consent_admin import InformedConsentAdmin

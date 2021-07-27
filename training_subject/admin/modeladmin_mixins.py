@@ -17,7 +17,7 @@ from edc_model_admin import (
 from edc_visit_tracking.modeladmin_mixins import (
     CrfModelAdminMixin as VisitTrackingCrfModelAdminMixin)
 
-from .exportaction_mixin import ExportActionMixin
+
 
 
 class VersionControlMixin:
@@ -57,7 +57,7 @@ class ModelAdminMixin(ModelAdminNextUrlRedirectMixin,
                       ModelAdminInstitutionMixin,
                       ModelAdminRedirectOnDeleteMixin,
                       ModelAdminSiteMixin,
-                      ExportActionMixin):
+                      ):
 
     list_per_page = 10
     date_hierarchy = 'modified'

@@ -13,7 +13,7 @@ from edc_model_admin import (
 from edc_model_admin import ModelAdminBasicMixin, ModelAdminReadOnlyMixin
 from simple_history.admin import SimpleHistoryAdmin
 
-from .exportaction_mixin import ExportActionMixin
+
 from ..forms import InformedConsentForm
 from ..models import InformedConsent
 from .modeladmin_mixins import VersionControlMixin
@@ -24,7 +24,7 @@ class ModelAdminMixin(ModelAdminNextUrlRedirectMixin, ModelAdminFormAutoNumberMi
                       ModelAdminRevisionMixin, ModelAdminReplaceLabelTextMixin,
                       ModelAdminInstitutionMixin, ModelAdminReadOnlyMixin,
                       VersionControlMixin, ModelAdminFormInstructionsMixin,
-                      ExportActionMixin):
+                      ):
     list_per_page = 10
     date_hierarchy = 'modified'
     empty_value_display = '-'

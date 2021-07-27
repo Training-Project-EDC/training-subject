@@ -9,7 +9,7 @@ from edc_reference.model_mixins import ReferenceModelMixin
 from edc_visit_tracking.managers import VisitModelManager
 from edc_visit_tracking.model_mixins import VisitModelMixin
 
-from ..choices import VISIT_INFO_SOURCE, VISIT_REASON
+
 from edc_appointment.models import Appointment
 
 
@@ -30,8 +30,7 @@ class SubjectVisit(
 
     reason = models.CharField(
         verbose_name='What is the reason for this visit report?',
-        max_length=25,
-        choices=VISIT_REASON)
+        max_length=25,)
 
     reason_missed = models.CharField(
         verbose_name='If \'Did not attend scheduled visit\' is detailed above,'
@@ -49,8 +48,7 @@ class SubjectVisit(
 
     info_source = models.CharField(
         verbose_name='What is the main source of this information?',
-        max_length=40,
-        choices=VISIT_INFO_SOURCE)
+        max_length=40,)
 
     on_site = CurrentSiteManager()
 

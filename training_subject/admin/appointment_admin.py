@@ -17,8 +17,6 @@ except NotRegistered:
 class AppointmentAdmin(BaseAppointmentAdmin, VersionControlMixin):
 
     enable_nav_sidebar = False
-    add_form_template = "admin/training_subject/change_form.html"
-    change_form_template = "admin/training_subject/change_form.html"
 
     def add_view(self, request, form_url='', extra_context=None):
         extra_context = extra_context or {}
