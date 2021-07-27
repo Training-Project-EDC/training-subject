@@ -28,8 +28,8 @@ class CrfModelMixin(BaseCrfModelMixin, SubjectScheduleCrfModelMixin,
     crf_date_validator_cls = None
 
     # form_version = DecimalField(
-        # decimal_places=1,
-        # max_digits=3)
+    #     decimal_places=1,
+    #     max_digits=3)
 
     @property
     def subject_identifier(self):
