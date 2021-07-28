@@ -16,6 +16,7 @@ from pathlib import Path
 from django.core.management.color import color_style
 
 style = color_style()
+ETC_DIR = './etc/'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,7 +30,9 @@ SECRET_KEY = 'q%lu_x9u5^n@+m0+v@1h=(y!fn-l%_6_9y6yvski-ehn8=s1r*'
 DEBUG = True
 SITE_ID = 1
 ALLOWED_HOSTS = []
-ETC_DIR = '/etc/'
+# AUTO_CREATE_KEYS = True
+
+KEY_PATH = './etc/training/'
 
 # Application definition
 

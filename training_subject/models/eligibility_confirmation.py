@@ -48,6 +48,12 @@ class EligibilityConfirmation(NonUniqueSubjectIdentifierFieldMixin,
         verbose_name='Age',
         help_text='How old is the subject? ', )
 
+    age_other = models.CharField(
+        verbose_name='If minor, is guardian available?',
+        choices=YES_NO,
+        max_length=5
+    )
+
     country_of_origin = models.CharField(
         verbose_name="Subject country of origin",
         default="BW",
