@@ -9,9 +9,9 @@ from edc_visit_tracking.constants import MISSED_VISIT, COMPLETED_PROTOCOL_VISIT
 from .constants import OMANG
 
 GENDER_OTHER = (
-    ('f', 'Female'),
-    ('m', 'Male'),
-    (OTHER, 'Other'),
+    ('F', 'Female'),
+    ('M', 'Male'),
+    ('OTHER', 'Other'),
 )
 
 

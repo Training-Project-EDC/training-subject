@@ -113,7 +113,7 @@ class InformedConsent(ConsentModelMixin, SiteModelMixin,
     class Meta(ConsentModelMixin.Meta):
         app_label = 'training_subject'
         verbose_name = 'Informed Consent'
-        unique_together = (
-            ('subject_identifier', 'version'),
-            ('subject_identifier', 'screening_identifier', 'version'),
-            ('first_name', 'dob', 'initials', 'version'))
+        # unique_together = (
+        #     ('subject_identifier', 'version'),
+        #     ('subject_identifier', 'screening_identifier', 'version'),
+        #     ('first_name', 'dob', 'initials', 'version'))
