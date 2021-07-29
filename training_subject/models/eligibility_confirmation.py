@@ -84,6 +84,7 @@ class EligibilityConfirmation(NonUniqueSubjectIdentifierFieldMixin,
 
     ineligibility = models.TextField(
         verbose_name="Reason not eligible",
+        default='Not Provided',
         max_length=150,
         null=True,
         editable=False)
