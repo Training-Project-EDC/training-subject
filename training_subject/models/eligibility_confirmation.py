@@ -106,7 +106,7 @@ class EligibilityConfirmation(NonUniqueSubjectIdentifierFieldMixin,
     def save(self, *args, **kwargs):
         eligibility_criteria = Eligibility(self)
         self.is_eligible = eligibility_criteria.is_eligible()
-        self.ineligibility = eligibility_criteria.error_message
+        self.ineligibility = ', '.join(eligibility_criteria.error_message)
         if not self.screening_identifier:
             self.screening_identifier = self.identifier_cls().identifier
         super().save(*args, **kwargs)
