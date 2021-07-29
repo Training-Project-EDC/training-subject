@@ -15,11 +15,12 @@ class Eligibility:
 
     def _check_age(self):
         result = False
-        if self._subject.age < AGE_THRESH_HOLD and self._subject.age_other == YES:
+        if self._subject.age < AGE_THRESH_HOLD and self._subject.is_guardian_avaliable == YES:
             result = True
         elif self._subject.age >= AGE_THRESH_HOLD:
             result = True
         else:
+            self.error_message.append('Age not permitted for consent')
             result = False
         return result
 
@@ -29,6 +30,9 @@ class Eligibility:
             result = True
         elif self._subject.spouse_country_of_origin == 'BW':
             result = True
+        else:
+            self.error_message.append('Not eligible')
+            return result
         return result
 
     def _check_literate(self):

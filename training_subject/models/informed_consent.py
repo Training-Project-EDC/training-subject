@@ -76,7 +76,7 @@ class InformedConsent(ConsentModelMixin, SiteModelMixin,
         choices=CURRENTLY_LIVE_WITH
     )
 
-    # TODO: Change default back to false
+
     is_eligible = models.BooleanField(default=True)
 
     objects = InformedConsentManager()

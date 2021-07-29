@@ -7,9 +7,7 @@ from model_mommy import mommy
 from ..models import OnSchedule
 
 
-@tag('vs')
-class TestVisitScheduleSetup(TestCase):
-
+class VisitScheduleTests(TestCase):
     databases = '__all__'
 
     def setUp(self):
@@ -20,11 +18,11 @@ class TestVisitScheduleSetup(TestCase):
         """
 
         mommy.make_recipe(
-            'training_subject.eligibilityconfirmation',)
+            'training_subject.eligibilityconfirmation', )
 
         informed_consent = mommy.make_recipe(
             'training_subject.informedconsent',
-            subject_identifier='123-9876')
+            subject_identifier='123-1234')
 
         self.assertEqual(OnSchedule.objects.filter(
             subject_identifier=informed_consent.subject_identifier,
@@ -40,7 +38,7 @@ class TestVisitScheduleSetup(TestCase):
         """
 
         mommy.make_recipe(
-            'training_subject.eligibilityconfirmation',)
+            'training_subject.eligibilityconfirmation', )
 
         informed_consent = mommy.make_recipe(
             'training_subject.informedconsent',
@@ -54,7 +52,7 @@ class TestVisitScheduleSetup(TestCase):
 
         mommy.make_recipe(
             'training_subject.covid19_symptomatic_infections',
-            infection_status='seropositive',)
+            infection_status='seropositive', )
 
         self.assertEqual(OnSchedule.objects.filter(
             subject_identifier=informed_consent.subject_identifier,

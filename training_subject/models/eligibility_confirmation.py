@@ -48,7 +48,7 @@ class EligibilityConfirmation(NonUniqueSubjectIdentifierFieldMixin,
         verbose_name='Age',
         help_text='How old is the subject? ', )
 
-    age_other = models.CharField(
+    is_guardian_avaliable = models.CharField(
         verbose_name='If minor, is guardian available?',
         choices=YES_NO,
         max_length=5
@@ -82,7 +82,13 @@ class EligibilityConfirmation(NonUniqueSubjectIdentifierFieldMixin,
         default=False,
         editable=False)
 
-    # is updated via signal once subject is consented
+    ineligibility = models.TextField(
+        verbose_name="Reason not eligible",
+        max_length=150,
+        null=True,
+        editable=False)
+
+    # is updated via signal once subject is consented [sigiii naaal ssss]
     is_consented = models.BooleanField(
         default=False,
         editable=False)
